@@ -1,0 +1,353 @@
+[
+
+    {
+        "id":"Sujanpur","const":"Pathankot","uid":1
+    },
+    {
+        "id":"Bhoa","const":"Pathankot"
+    },
+    {
+        "id":"Pathankot","const":"Pathankot"
+    },
+    {
+        "id":"Gurdaspur","const":"Gurdaspur","uid":2
+    },
+    {
+        "id":"Dina Nagar","const":"Gurdaspur"
+    },
+    {
+        "id":"Qadian","const":"Gurdaspur"
+    },
+    {
+        "id":"Batala","const":"Gurdaspur"
+    },
+    {
+        "id":"Shri Hargobindpur","const":"Gurdaspur"
+    },
+    {
+        "id":"Fatehgarh Churian","const":"Gurdaspur"
+    },
+    {
+        "id":"Dera Baba Nanak","const":"Gurdaspur"
+    },
+    {
+        "id":"Ajnala","const":"Amritsar","uid":3
+    },
+    {
+        "id":"Baba Bakala","const":"Amritsar"
+    },
+    {
+        "id":"Raja Sansi","const":"Amritsar"
+    },
+    {
+        "id":"Majitha","const":"Amritsar"
+    },
+    {
+        "id":"Jandiala","const":"Amritsar"
+    },
+    {
+        "id":"Amritsar North","const":"Amritsar"
+    },
+    {
+        "id":"Amritsar West","const":"Amritsar"
+    },
+    {
+        "id":"Amritsar Central","const":"Amritsar"
+    },
+    {
+        "id":"Amritsar East","const":"Amritsar"
+    },
+    {
+        "id":"Amritsar","const":"Amritsar"
+    },
+    {
+        "id":"Attari","const":"Amritsar"
+    },
+    {
+        "id":"Tarn Taran","const":"Tarn Taran","uid":4
+    },
+    {
+        "id":"Khem Karan","const":"Tarn Taran"
+    },
+    {
+        "id":"Patti","const":"Tarn Taran"
+    },
+    {
+        "id":"Khadoor Sahib","const":"Tarn Taran"
+    },
+    {
+        "id":"Phagwara","const":"Kapurthala","uid":5
+    },
+    {
+        "id":"Kapurthala","const":"Kapurthala"
+    },
+    {
+        "id":"Bhullath","const":"Kapurthala"
+    },
+    {
+        "id":"Sultanpur Lodhi","const":"Kapurthala"
+    },
+    {
+        "id":"Phillaur","const":"Jalandhar","uid":6
+    },
+    {
+        "id":"Nakodar","const":"Jalandhar"
+    },
+    {
+        "id":"Shahkot","const":"Jalandhar"
+    },
+    {
+        "id":"Kartarpur","const":"Jalandhar"
+    },
+    {
+        "id":"Jalandhar West","const":"Jalandhar"
+    },
+    {
+        "id":"Jalandhar Central","const":"Jalandhar"
+    },
+    {
+        "id":"Jalandhar North","const":"Jalandhar"
+    },
+    {
+        "id":"Jalandhar Cantt","const":"Jalandhar"
+    },
+    {
+        "id":"Adampur","const":"Jalandhar"
+    },
+    {
+        "id":"Mukerian","const":"Hoshiarpur","uid":7
+    },
+    {
+        "id":"Dasua","const":"Hoshiarpur"
+    },
+
+    {
+        "id":"Urmar","const":"Hoshiarpur"
+    },
+    {
+        "id":"Sham Chaurasi","const":"Hoshiarpur"
+    },
+    {
+        "id":"Hoshiarpur","const":"Hoshiarpur"
+    },
+    {
+        "id":"Chabbewal","const":"Hoshiarpur"
+    },
+    {
+        "id":"Garhshankar","const":"Hoshiarpur"
+    },
+    {
+        "id":"Banga","const":"Nawanshahr","uid":8
+    },
+    {
+        "id":"Nawanshahr","const":"Nawanshahr"
+    },
+    {
+        "id":"Balachaur","const":"Nawanshahr"
+    },
+    {
+        "id":"Anandpur Sahib","const":"Rup Nagar","uid":9
+    },
+    {
+        "id":"Rup Nagar","const":"Rup Nagar"
+    },
+    {
+        "id":"Chamkaur Sahib","const":"Rup Nagar"
+    },
+    {
+        "id":"Kharar","const":"S.A.S. Nagar","uid":10
+    },
+    {
+        "id":"S.A.S. Nagar","const":"S.A.S. Nagar"
+    },
+    {
+        "id":"Dera Bassi","const":"S.A.S. Nagar"
+    },
+    {
+        "id":"Bassi Pathan","const":"Fatehgarh Sahib","uid":11
+    },
+    {
+        "id":"Fatehgarh Sahib","const":"Fatehgarh Sahib"
+    },
+    {
+        "id":"Amloh","const":"Fatehgarh Sahib"
+    },
+    {
+        "id":"Khanna","const":"Ludhiana","uid":12
+    },
+    {
+        "id":"Samrala","const":"Ludhiana"
+    },
+    {
+        "id":"Sahnewal","const":"Ludhiana"
+    },
+    {
+        "id":"Ludhiana East","const":"Ludhiana"
+    },
+    {
+        "id":"Ludhiana South","const":"Ludhiana"
+    },
+    {
+        "id":"Atam Nagar","const":"Ludhiana"
+    },
+    {
+        "id":"Ludhiana Central","const":"Ludhiana"
+    },
+    {
+        "id":"Ludhiana West","const":"Ludhiana"
+    },
+    {
+        "id":"Ludhiana North","const":"Ludhiana"
+    },
+    {
+        "id":"Gill","const":"Ludhiana"
+    },
+    {
+        "id":"Payal","const":"Ludhiana"
+    },
+    {
+        "id":"Dakha","const":"Ludhiana"
+    },
+    {
+        "id":"Raikot","const":"Ludhiana"
+    },
+    {
+        "id":"Jagraon","const":"Ludhiana"
+    },
+    {
+        "id":"Nihal Singh Wala","const":"Moga","uid":13
+    },
+    {
+        "id":"Bagha Purana","const":"Moga"
+    },
+    {
+        "id":"Moga","const":"Moga"
+    },
+    {
+        "id":"Dharamkot","const":"Moga"
+    },
+    {
+        "id":"Zira","const":"Firozpur","uid":14
+    },
+    {
+        "id":"Firozpur","const":"Firozpur"
+    },
+    {
+        "id":"Firozpur Rural","const":"Firozpur"
+    },
+    {
+        "id":"Guru Har Sahai","const":"Firozpur"
+    },
+    {
+        "id":"Jalalabad","const":"Firozpur"
+    },
+    {
+        "id":"Fazilka","const":"Fazilka","uid":15
+    },
+    {
+        "id":"Abohar","const":"Fazilka"
+    },
+    {
+        "id":"Baluana","const":"Fazilka"
+    },
+    {
+        "id":"Lambi","const":"Muktsar Sahib","uid":16
+    },
+    {
+        "id":"Malout","const":"Muktsar Sahib"
+    },
+    {
+        "id":"Muktsar","const":"Muktsar Sahib"
+    },
+    {
+        "id":"Gidderbaha","const":"Muktsar Sahib"
+    },
+    {
+        "id":"Faridkot","const":"Faridkot","uid":17
+    },
+    {
+        "id":"Kot Kapura","const":"Faridkot"
+    },
+    {
+        "id":"Jaiton","const":"Faridkot"
+    },
+    {
+        "id":"Rampura Phul","const":"Bathinda","uid":8
+    },
+    {
+        "id":"Bhucho Mandi","const":"Bathinda"
+    },
+    {
+        "id":"Bathinda","const":"Bathinda"
+    },
+    {
+        "id":"Bathinda Rural","const":"Bathinda"
+    },
+    {
+        "id":"Talwandi Sabo","const":"Bathinda"
+    },
+    {
+        "id":"Maur","const":"Bathinda"
+    },
+    {
+        "id":"Mansa","const":"Mansa","uid":19
+    },
+    {
+        "id":"Sardulgarh","const":"Mansa"
+    },
+    {
+        "id":"Budhlada","const":"Mansa"
+    },
+    {
+        "id":"Lehra","const":"Sangrur","uid":20
+    },
+    {
+        "id":"Dirba","const":"Sangrur"
+    },
+    {
+        "id":"Bhadaur","const":"Barnala","uid":21
+    },
+    {
+        "id":"Barnala","const":"Barnala"
+    },
+    {
+        "id":"Mehal Kalan","const":"Barnala"
+    },
+    {
+        "id":"Malerkotla","const":"Sangrur"
+    },
+    {
+        "id":"Amargarh","const":"Sangrur"
+    },
+    {
+        "id":"Dhuri","const":"Sangrur"
+    },
+    {
+        "id":"Sangrur","const":"Sangrur"
+    },
+    {
+        "id":"Nabha","const":"Patiala","uid":22
+    },
+    {
+        "id":"Patiala Rural","const":"Patiala"
+    },
+    {
+        "id":"Rajpura","const":"Patiala"
+    },
+    {
+        "id":"Ghanaur","const":"Patiala"
+    },
+    {
+        "id":"Sanaur","const":"Patiala"
+    },
+    {
+        "id":"Patiala","const":"Patiala"
+    },
+    {
+        "id":"Samana","const":"Patiala"
+    },
+    {
+        "id":"Shutrana","const":"Patiala"
+    }
+ 
+]

@@ -1,0 +1,7 @@
+{
+  "name": "PoliticalSurvey",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

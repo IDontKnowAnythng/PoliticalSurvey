@@ -1,0 +1,1353 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-back-outline" style="padding-left: 10px;"></ion-icon>
+    <ion-title>Let's</ion-title>
+ 
+      <ion-icon slot="end" name="ellipsis-vertical-outline" style="padding-right: 10px;"></ion-icon>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <form (ngSubmit)="onSubmit()" style="padding-bottom: 0px;">
+
+
+<ion-card style="  border-top: 5px solid #6B3FB9">
+  <h1 style="font-size: 18px;text-align: center;">IDI_Moradabad_Parliament</h1>
+  <ion-card-subtitle style="text-align: center;">IDI form for Assembly analysis</ion-card-subtitle>
+  <ion-card-subtitle style="color: red;font-size: 14px;">* Required</ion-card-subtitle>
+</ion-card>
+
+ <ion-card>
+   <ion-card-title>Name of the Respondent </ion-card-title>
+   <ion-item lines="full">
+    <ion-input type="text" required placeholder="Your Answer" name="Name" required [(ngModel)]="data.Name"></ion-input>
+  </ion-item>
+
+  </ion-card>
+  <ion-card>
+    <ion-card-title>Mobile Number</ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="number" required placeholder="Your Answer" name="MobileNo" required [(ngModel)]="data.MobileNo"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+        <ion-select mode="ios" placeholder="choose" [(ngModel)]="data.Gender">
+          <ion-select-option value="male">Male</ion-select-option>
+          <ion-select-option value="female">Female</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Profession</ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" name="Profession" required [(ngModel)]="data.Profession"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-item>
+      <ion-label>District</ion-label>
+        <ion-select mode="ios" placeholder="choose" name="District" [(ngModel)]="data.District">
+          <ion-select-option value="moradabad">Moradabaad</ion-select-option>
+          <ion-select-option value="bijnor">Bijnor</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-item>
+      <ion-label>Assembly</ion-label>
+        <ion-select mode="ios" placeholder="choose" name="Assembly" [(ngModel)]="data.Assembly">
+          <ion-select-option value="Barhapur">Barhapur</ion-select-option>
+          <ion-select-option value="Kanta">Kanta</ion-select-option>
+          <ion-select-option value="moradabad n">Moradabad Nagar</ion-select-option>
+          <ion-select-option value="moradabad r">Moradabad Rural</ion-select-option>
+          <ion-select-option value="Thakurdwara">Thakurdwara</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>What are the current relevant issues at parliamentary constituency, assembly constituency and local level? (Top 3) </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" name="SurveyQ1" required [(ngModel)]="data.SurveyQ1"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On what basis, do the people of this Parliamentary cast their vote? (PC Level) (Tap the response in terms of Party, Leader, Issue, other if any)  </ion-card-title>
+    <ion-list>
+      <ion-radio-group value="party" name="SurveyQ2" [(ngModel)]="data.SurveyQ2">
+    
+        <ion-item>
+          <ion-label>party</ion-label>
+          <ion-radio slot="start" value="party"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>leader</ion-label>
+          <ion-radio slot="start" value="leader"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>issue</ion-label>
+          <ion-radio slot="start" value="issue"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ2=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On what basis, do the people of this Parliamentary cast their vote? (AC Level) (Tap the response in terms of Party, Leader, Issue, other if any)  </ion-card-title>
+    <ion-list>
+      <ion-radio-group value="party" name="SurveyQ3" [(ngModel)]="data.SurveyQ3">
+    
+        <ion-item>
+          <ion-label>party</ion-label>
+          <ion-radio slot="start" value="party"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>leader</ion-label>
+          <ion-radio slot="start" value="leader"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>issue</ion-label>
+          <ion-radio slot="start" value="issue"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ3=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>What are the major castes prevalent in the parliamentary constituency? (Also, tap the caste dependency and prominent caste leader)</ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" name="SurveyQ4" required [(ngModel)]="data.SurveyQ4"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On a scale of 1 to 5,(1 being very poor and 5 being very null) rate the performance of your Member of Parliament (MP)</ion-card-title>
+    <ion-item  style="width: 100%;"lines="full">
+      <ion-icon name="sad-outline" style="padding-right:8px;"></ion-icon>
+
+      <ion-range  style="padding:0px;"min="1"max="5" step="1" value="3" name="SurveyQ5" [(ngModel)]="data.SurveyQ5" snaps color="primary">
+      </ion-range>
+      <ion-icon name="happy-outline" style="padding-left:8px;"></ion-icon>     
+   </ion-item>
+   <div class="details">
+    <ion-chip>
+      <ion-label *ngIf="data.SurveyQ5==5" style="color:rgb(4, 117, 1);">5</ion-label>
+      <ion-label *ngIf="data.SurveyQ5==4" style="color:rgb(49, 161, 5);">4</ion-label>
+      <ion-label *ngIf="data.SurveyQ5==3" style="color:rgb(0, 0, 0);">3</ion-label>
+      <ion-label *ngIf="data.SurveyQ5==null" style="color:rgb(0, 0, 0);">select</ion-label>
+      <ion-label *ngIf="data.SurveyQ5==2" style="color:rgb(173, 0, 0);">2</ion-label>
+      <ion-label *ngIf="data.SurveyQ5==1" style="color:rgb(121, 3, 3);">1</ion-label>
+      </ion-chip>
+  </div>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On a scale of 1 to 5,(1 being very poor and 5 being very null) rate the performance of your Member of Legislative assembly (MLA)</ion-card-title>
+    <ion-item  style="width: 100%;"lines="full">
+      <ion-icon name="sad-outline" style="padding-right:8px;"></ion-icon>
+
+      <ion-range  style="padding:0px;"min="1"max="5" step="1" value="3" name="SurveyQ6" [(ngModel)]="data.SurveyQ6" snaps color="primary">
+      </ion-range>
+      <ion-icon name="happy-outline" style="padding-left:8px;"></ion-icon>     
+   </ion-item>
+   <div class="details">
+    <ion-chip>
+      <ion-label *ngIf="data.SurveyQ6==5" style="color:rgb(4, 117, 1);">5</ion-label>
+      <ion-label *ngIf="data.SurveyQ6==4" style="color:rgb(49, 161, 5);">4</ion-label>
+      <ion-label *ngIf="data.SurveyQ6==3" style="color:rgb(0, 0, 0);">3</ion-label>
+      <ion-label *ngIf="data.SurveyQ6==null" style="color:rgb(0, 0, 0);">select</ion-label>
+      <ion-label *ngIf="data.SurveyQ6==2" style="color:rgb(173, 0, 0);">2</ion-label>
+      <ion-label *ngIf="data.SurveyQ6==1" style="color:rgb(121, 3, 3);">1</ion-label>
+      </ion-chip>
+  </div>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On a scale of 1 to 5, rate the performance of your Chief Minister *</ion-card-title>
+    <ion-item  style="width: 100%;"lines="full">
+      <ion-icon name="sad-outline" style="padding-right:8px;"></ion-icon>
+
+      <ion-range  style="padding:0px;"min="1"max="5" step="1" value="3" name="SurveyQ7" [(ngModel)]="data.SurveyQ7" snaps color="primary">
+      </ion-range>
+      <ion-icon name="happy-outline" style="padding-left:8px;"></ion-icon>     
+   </ion-item>
+   <div class="details">
+    <ion-chip>
+      <ion-label *ngIf="data.SurveyQ7==5" style="color:rgb(4, 117, 1);">5</ion-label>
+      <ion-label *ngIf="data.SurveyQ7==4" style="color:rgb(49, 161, 5);">4</ion-label>
+      <ion-label *ngIf="data.SurveyQ7==3" style="color:rgb(0, 0, 0);">3</ion-label>
+      <ion-label *ngIf="data.SurveyQ7==null" style="color:rgb(0, 0, 0);">select</ion-label>
+      <ion-label *ngIf="data.SurveyQ7==2" style="color:rgb(173, 0, 0);">2</ion-label>
+      <ion-label *ngIf="data.SurveyQ7==1" style="color:rgb(121, 3, 3);">1</ion-label>
+      </ion-chip>
+  </div>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>On a scale of 1 to 5, rate the performance of your State Government </ion-card-title>
+    <ion-item  style="width: 100%;"lines="full">
+      <ion-icon name="sad-outline" style="padding-right:8px;"></ion-icon>
+
+      <ion-range  style="padding:0px;"min="1"max="5" step="1" value="3" name="SurveyQ8" [(ngModel)]="data.SurveyQ8" snaps color="primary">
+      </ion-range>
+      <ion-icon name="happy-outline" style="padding-left:8px;"></ion-icon>     
+   </ion-item>
+   <div class="details">
+    <ion-chip>
+      <ion-label *ngIf="data.SurveyQ8==5" style="color:rgb(4, 117, 1);">5</ion-label>
+      <ion-label *ngIf="data.SurveyQ8==4" style="color:rgb(49, 161, 5);">4</ion-label>
+      <ion-label *ngIf="data.SurveyQ8==3" style="color:rgb(0, 0, 0);">3</ion-label>
+      <ion-label *ngIf="data.SurveyQ8==null" style="color:rgb(0, 0, 0);">select</ion-label>
+      <ion-label *ngIf="data.SurveyQ8==2" style="color:rgb(173, 0, 0);">2</ion-label>
+      <ion-label *ngIf="data.SurveyQ8==1" style="color:rgb(121, 3, 3);">1</ion-label>
+      </ion-chip>
+  </div>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>What have been the major accomplishments of your MP in this tenure?</ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required name="SurveyQ9" [(ngModel)]="data.SurveyQ9" ></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>How is the current MP in terms of</ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="null" name="SurveyQ10A" [(ngModel)]="data.SurveyQ10A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ10A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10A}}</span>
+              <span  *ngIf="data.SurveyQ10A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10A}}</span>
+              <span *ngIf="data.SurveyQ10A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10A}}</span>
+              <span *ngIf="data.SurveyQ10A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ10T" [(ngModel)]="data.SurveyQ10T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ10T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10T}}</span>
+              <span  *ngIf="data.SurveyQ10T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10T}}</span>
+              <span *ngIf="data.SurveyQ10T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10T}}</span>
+              <span *ngIf="data.SurveyQ10T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ10I" [(ngModel)]="data.SurveyQ10I">
+          <ion-list-header>
+           <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ10I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10I}}</span>
+              <span  *ngIf="data.SurveyQ10I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10I}}</span>
+              <span *ngIf="data.SurveyQ10I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10I}}</span>
+              <span *ngIf="data.SurveyQ10I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ10E" [(ngModel)]="data.SurveyQ10E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ10E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10E}}</span>
+              <span  *ngIf="data.SurveyQ10E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10E}}</span>
+              <span *ngIf="data.SurveyQ10E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ10E}}</span>
+              <span *ngIf="data.SurveyQ10E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+           
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Party Analysis (BJP)</ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ11A" [(ngModel)]="data.SurveyQ11A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ11A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11A}}</span>
+              <span  *ngIf="data.SurveyQ11A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11A}}</span>
+              <span *ngIf="data.SurveyQ11A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11A}}</span>
+              <span *ngIf="data.SurveyQ11A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"   name="SurveyQ11T" [(ngModel)]="data.SurveyQ11T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ11T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11T}}</span>
+              <span  *ngIf="data.SurveyQ11T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11T}}</span>
+              <span *ngIf="data.SurveyQ11T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11T}}</span>
+              <span *ngIf="data.SurveyQ11T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ11I" [(ngModel)]="data.SurveyQ11I">
+          <ion-list-header>
+            <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ11I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11I}}</span>
+              <span  *ngIf="data.SurveyQ11I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11I}}</span>
+              <span *ngIf="data.SurveyQ11I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11I}}</span>
+              <span *ngIf="data.SurveyQ11I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ11E" [(ngModel)]="data.SurveyQ11E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ11E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11E}}</span>
+              <span  *ngIf="data.SurveyQ11E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11E}}</span>
+              <span *ngIf="data.SurveyQ11E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ11E}}</span>
+              <span *ngIf="data.SurveyQ11E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Party Analysis (INC) </ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ12A" [(ngModel)]="data.SurveyQ12A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ12A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12A}}</span>
+              <span  *ngIf="data.SurveyQ12A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12A}}</span>
+              <span *ngIf="data.SurveyQ12A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12A}}</span>
+              <span *ngIf="data.SurveyQ12A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ12T" [(ngModel)]="data.SurveyQ12T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ12T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12T}}</span>
+              <span  *ngIf="data.SurveyQ12T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12T}}</span>
+              <span *ngIf="data.SurveyQ12T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12T}}</span>
+              <span *ngIf="data.SurveyQ12T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ12I" [(ngModel)]="data.SurveyQ12I">
+          <ion-list-header>
+            <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ12I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12I}}</span>
+              <span  *ngIf="data.SurveyQ12I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12I}}</span>
+              <span *ngIf="data.SurveyQ12I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12I}}</span>
+              <span *ngIf="data.SurveyQ12I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ12E" [(ngModel)]="data.SurveyQ12E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ12E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12E}}</span>
+              <span  *ngIf="data.SurveyQ12E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12E}}</span>
+              <span *ngIf="data.SurveyQ12E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ12E}}</span>
+              <span *ngIf="data.SurveyQ12E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Party Analysis (SP) </ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ13A" [(ngModel)]="data.SurveyQ13A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ13A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13A}}</span>
+              <span  *ngIf="data.SurveyQ13A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13A}}</span>
+              <span *ngIf="data.SurveyQ13A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13A}}</span>
+              <span *ngIf="data.SurveyQ13A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ13T" [(ngModel)]="data.SurveyQ13T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ13T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13T}}</span>
+              <span  *ngIf="data.SurveyQ13T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13T}}</span>
+              <span *ngIf="data.SurveyQ13T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13T}}</span>
+              <span *ngIf="data.SurveyQ13T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ13I" [(ngModel)]="data.SurveyQ13I">
+          <ion-list-header>
+            <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ13I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13I}}</span>
+              <span  *ngIf="data.SurveyQ13I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13I}}</span>
+              <span *ngIf="data.SurveyQ13I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13I}}</span>
+              <span *ngIf="data.SurveyQ13I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ13E" [(ngModel)]="data.SurveyQ13E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ13E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13E}}</span>
+              <span  *ngIf="data.SurveyQ13E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13E}}</span>
+              <span *ngIf="data.SurveyQ13E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ13E}}</span>
+              <span *ngIf="data.SurveyQ13E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Party Analysis (BSP) </ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ14A" [(ngModel)]="data.SurveyQ14A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ14A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14A}}</span>
+              <span  *ngIf="data.SurveyQ14A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14A}}</span>
+              <span *ngIf="data.SurveyQ14A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14A}}</span>
+              <span *ngIf="data.SurveyQ14A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ14T" [(ngModel)]="data.SurveyQ14T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ14T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14T}}</span>
+              <span  *ngIf="data.SurveyQ14T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14T}}</span>
+              <span *ngIf="data.SurveyQ14T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14T}}</span>
+              <span *ngIf="data.SurveyQ14T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ14I" [(ngModel)]="data.SurveyQ14I">
+          <ion-list-header>
+            <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ14I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14I}}</span>
+              <span  *ngIf="data.SurveyQ14I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14I}}</span>
+              <span *ngIf="data.SurveyQ14I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14I}}</span>
+              <span *ngIf="data.SurveyQ14I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ14E" [(ngModel)]="data.SurveyQ14E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ14E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14E}}</span>
+              <span  *ngIf="data.SurveyQ14E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14E}}</span>
+              <span *ngIf="data.SurveyQ14E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ14E}}</span>
+              <span *ngIf="data.SurveyQ14E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Party Analysis (others) </ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ15A" [(ngModel)]="data.SurveyQ15A">
+          <ion-list-header>
+            <h1>Accessibility - 
+              <span *ngIf="data.SurveyQ15A=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15A}}</span>
+              <span  *ngIf="data.SurveyQ15A=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15A}}</span>
+              <span *ngIf="data.SurveyQ15A=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15A}}</span>
+              <span *ngIf="data.SurveyQ15A=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ15T" [(ngModel)]="data.SurveyQ15T">
+          <ion-list-header>
+            <h1>Transparency - 
+              <span *ngIf="data.SurveyQ15T=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15T}}</span>
+              <span  *ngIf="data.SurveyQ15T=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15T}}</span>
+              <span *ngIf="data.SurveyQ15T=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15T}}</span>
+              <span *ngIf="data.SurveyQ15T=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ15I" [(ngModel)]="data.SurveyQ15I">
+          <ion-list-header>
+            <h1>Inclusivity - 
+              <span *ngIf="data.SurveyQ15I=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15I}}</span>
+              <span  *ngIf="data.SurveyQ15I=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15I}}</span>
+              <span *ngIf="data.SurveyQ15I=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15I}}</span>
+              <span *ngIf="data.SurveyQ15I=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ15E" [(ngModel)]="data.SurveyQ15E">
+          <ion-list-header>
+            <h1>Efficiency - 
+              <span *ngIf="data.SurveyQ15E=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15E}}</span>
+              <span  *ngIf="data.SurveyQ15E=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15E}}</span>
+              <span *ngIf="data.SurveyQ15E=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ15E}}</span>
+              <span *ngIf="data.SurveyQ15E=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+  
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Is there any anti-incumbency of the current MP? If yes, then what are the issues on which there is anti-incumbency?</ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer"  name="SurveyQ17" required [(ngModel)]="data.SurveyQ17"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Current Scenario of Parties </ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good" name="SurveyQ16BJP" [(ngModel)]="data.SurveyQ16BJP">
+          <ion-list-header>
+            <h1>BJP - 
+              <span *ngIf="data.SurveyQ16BJP=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BJP}}</span>
+              <span  *ngIf="data.SurveyQ16BJP=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BJP}}</span>
+              <span *ngIf="data.SurveyQ16BJP=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BJP}}</span>
+              <span *ngIf="data.SurveyQ16BJP=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good" name="SurveyQ16INC" [(ngModel)]="data.SurveyQ16INC">
+          <ion-list-header>
+            <h1>INC - 
+              <span *ngIf="data.SurveyQ16INC=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16INC}}</span>
+              <span  *ngIf="data.SurveyQ16INC=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16INC}}</span>
+              <span *ngIf="data.SurveyQ16INC=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16INC}}</span>
+              <span *ngIf="data.SurveyQ16INC=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ16SP" [(ngModel)]="data.SurveyQ16SP">
+          <ion-list-header>
+            <h1>SP - 
+              <span *ngIf="data.SurveyQ16SP=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16SP}}</span>
+              <span  *ngIf="data.SurveyQ16SP=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16SP}}</span>
+              <span *ngIf="data.SurveyQ16SP=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16SP}}</span>
+              <span *ngIf="data.SurveyQ16SP=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ16BSP" [(ngModel)]="data.SurveyQ16BSP">
+          <ion-list-header>
+            <h1>BSP - 
+              <span *ngIf="data.SurveyQ16BSP=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BSP}}</span>
+              <span  *ngIf="data.SurveyQ16BSP=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BSP}}</span>
+              <span *ngIf="data.SurveyQ16BSP=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16BSP}}</span>
+              <span *ngIf="data.SurveyQ16BSP=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="good"></ion-radio>
+            <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+            <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+        <ion-list>
+          <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ16Others" [(ngModel)]="data.SurveyQ16Others">
+            <ion-list-header>
+              <h1>Others(if any) - 
+                <span *ngIf="data.SurveyQ16Others=='good'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16Others}}</span>
+                <span  *ngIf="data.SurveyQ16Others=='average'" style="color:#50c8ff;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16Others}}</span>
+                <span *ngIf="data.SurveyQ16Others=='bad'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ16Others}}</span>
+                <span *ngIf="data.SurveyQ16Others=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+              </h1>
+  
+            </ion-list-header>
+           
+    
+            <ion-item>
+              <ion-radio slot="end" color="success" value="good"></ion-radio>
+              <ion-radio style="position: relative;left: 90px;" color="secondary" value="average"></ion-radio>
+              <ion-radio slot="start" color="danger" value="bad"></ion-radio>
+            </ion-item>
+           
+          </ion-radio-group>
+        </ion-list>
+      </div>
+
+  
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Will you vote for the current MP again in the 2019 elections? </ion-card-title>
+    <ion-list>
+      <ion-radio-group value="party" name="SurveyQ18" [(ngModel)]="data.SurveyQ18">
+    
+        <ion-item>
+          <ion-label>Yes</ion-label>
+          <ion-radio slot="start" value="yes"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="no"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Maybe</ion-label>
+          <ion-radio slot="start" value="maybe"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Who are the top 3 leaders from your region (irrespective of the party they belong to) and why? (Tap top 3 reasons) </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required name="SurveyQ19" [(ngModel)]="data.SurveyQ19"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Who is the top leader of BJP, INC, SP, BSP and Other (If any) in your Parliamentary Constituency? Please mention leader's name and his/her party? (with reason why is he famous? (reason must have points on : Accessibility, Transparency, Inclusivity, Efficiency) </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required name="SurveyQ20" [(ngModel)]="data.SurveyQ20"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>How much is the effect of the alliance (mention the name of the party) in your constituency? (INC+SP+BSP)/(SP+BSP)/others) </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required name="SurveyQ21" [(ngModel)]="data.SurveyQ21" ></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-item>
+      <ion-label>How much influence does Priyanka Gandhi has on this General Election 2019</ion-label>
+        <ion-select mode="ios" placeholder="choose"   name="SurveyQ22" [(ngModel)]="data.SurveyQ22">
+          <ion-select-option value="None">None</ion-select-option>
+          <ion-select-option value="Less">Less</ion-select-option>
+          <ion-select-option value="Mild">Mild</ion-select-option>
+          <ion-select-option value="High">High</ion-select-option>
+          <ion-select-option value="Very High">Very High</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Issues on which BJP/INC/SP/BSP will base their election (Tap the response seperately for each party)
+    </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required name="SurveyQ23" [(ngModel)]="data.SurveyQ23" ></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card class="change">
+    <ion-card-title>Social Media Reach</ion-card-title>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ24Phone" [(ngModel)]="data.SurveyQ24Phone">
+          <ion-list-header>
+            <h1>Phone - 
+              <span *ngIf="data.SurveyQ24Phone=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Phone}}</span>
+              <span *ngIf="data.SurveyQ24Phone=='no'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Phone}}</span>
+              <span *ngIf="data.SurveyQ24Phone=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="yes"></ion-radio>
+            <ion-radio slot="start" color="danger" value="no"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="Good"  name="SurveyQ24SmartPhone" [(ngModel)]="data.SurveyQ24SmartPhone">
+          <ion-list-header>
+            <h1>Smart Phone - 
+              <span *ngIf="data.SurveyQ24SmartPhone=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24SmartPhone}}</span>
+              <span *ngIf="data.SurveyQ24SmartPhone=='no'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24SmartPhone}}</span>
+              <span *ngIf="data.SurveyQ24SmartPhone=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="yes"></ion-radio>
+            <ion-radio slot="start" color="danger" value="no"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="null"  name="SurveyQ24Facebook" [(ngModel)]="data.SurveyQ24Facebook">
+          <ion-list-header>
+            <h1>Facebook - 
+              <span *ngIf="data.SurveyQ24Facebook=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Facebook}}</span>
+              <span *ngIf="data.SurveyQ24Facebook=='no'" style="color:#706b6b;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Facebook}}</span>
+              <span *ngIf="data.SurveyQ24Facebook=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="yes"></ion-radio>
+            <ion-radio slot="start" color="danger" value="no"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+      <ion-list>
+        <ion-radio-group allow-empty-selection value="null"  name="SurveyQ24Whatsapp" [(ngModel)]="data.SurveyQ24Whatsapp">
+          <ion-list-header>
+            <h1>Whatsapp - 
+              <span *ngIf="data.SurveyQ24Whatsapp=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Whatsapp}}</span>
+              <span *ngIf="data.SurveyQ24Whatsapp=='no'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Whatsapp}}</span>
+              <span *ngIf="data.SurveyQ24Whatsapp=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+            </h1>
+
+          </ion-list-header>
+         
+  
+          <ion-item>
+            <ion-radio slot="end" color="success" value="yes"></ion-radio>
+            <ion-radio slot="start" color="danger" value="no"></ion-radio>
+          </ion-item>
+         
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.288);">
+        <ion-list>
+          <ion-radio-group allow-empty-selection value="null"  name="SurveyQ24Twitter" [(ngModel)]="data.SurveyQ24Twitter">
+            <ion-list-header>
+              <h1>Twitter - 
+                <span *ngIf="data.SurveyQ24Twitter=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Twitter}}</span>
+                <span *ngIf="data.SurveyQ24Twitter=='no'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Twitter}}</span>
+                <span *ngIf="data.SurveyQ24Twitter=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+              </h1>
+  
+            </ion-list-header>
+           
+    
+            <ion-item>
+              <ion-radio slot="end" color="success" value="yes"></ion-radio>
+              <ion-radio slot="start" color="danger" value="no"></ion-radio>
+            </ion-item>
+           
+          </ion-radio-group>
+        </ion-list>
+      </div>
+      <div style="background-color: rgba(0, 0, 0, 0.288);">
+        <ion-list>
+          <ion-radio-group allow-empty-selection value="null"  name="SurveyQ24Instagram" [(ngModel)]="data.SurveyQ24Instagram">
+            <ion-list-header>
+              <h1>Instagram - 
+                <span *ngIf="data.SurveyQ24Instagram=='yes'" style="color:#2fdf75;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Instagram}}</span>
+                <span *ngIf="data.SurveyQ24Instagram=='no'" style="color:#ff4961;font-size:16px;position: relative;left: 0px;">{{data.SurveyQ24Instagram}}</span>
+                <span *ngIf="data.SurveyQ24Instagram=='null'" style="color:#0000009d;font-size:16px;position: relative;left: 0px;">choose</span>
+              </h1>
+  
+            </ion-list-header>
+           
+    
+            <ion-item>
+              <ion-radio slot="end" color="success" value="yes"></ion-radio>
+              <ion-radio slot="start" color="danger" value="no"></ion-radio>
+            </ion-item>
+           
+          </ion-radio-group>
+        </ion-list>
+      </div>
+
+
+  
+   </ion-card>
+   <ion-card>
+     <ion-card-title>Social Media Frequency</ion-card-title>
+    <ion-item>
+      <ion-label>Facebook</ion-label>
+        <ion-select mode="ios" placeholder="choose"  name="SurveyQ25Facebook" [(ngModel)]="data.SurveyQ25Facebook">
+          <ion-select-option value="Everyday">Everyday</ion-select-option>
+          <ion-select-option value="Twice a week	">Twice a week	</ion-select-option>
+          <ion-select-option value="Once a week	">Once a week	</ion-select-option>
+          <ion-select-option value="Twice a Month	">Twice a Month	</ion-select-option>
+          <ion-select-option value="Once a month">Once a month</ion-select-option>
+          <ion-select-option value="Doesn't Use">Doesn't Use</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Whatsapp</ion-label>
+          <ion-select mode="ios" placeholder="choose"  name="SurveyQ25Whatsapp" [(ngModel)]="data.SurveyQ25Whatsapp">
+            <ion-select-option value="Everyday">Everyday</ion-select-option>
+            <ion-select-option value="Twice a week	">Twice a week	</ion-select-option>
+            <ion-select-option value="Once a week	">Once a week	</ion-select-option>
+            <ion-select-option value="Twice a Month	">Twice a Month	</ion-select-option>
+            <ion-select-option value="Once a month">Once a month</ion-select-option>
+            <ion-select-option value="Doesn't Use">Doesn't Use</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Twitter</ion-label>
+            <ion-select mode="ios" placeholder="choose"  name="SurveyQ25Twitter" [(ngModel)]="data.SurveyQ25Twitter">
+              <ion-select-option value="Everyday">Everyday</ion-select-option>
+              <ion-select-option value="Twice a week	">Twice a week	</ion-select-option>
+              <ion-select-option value="Once a week	">Once a week	</ion-select-option>
+              <ion-select-option value="Twice a Month	">Twice a Month	</ion-select-option>
+              <ion-select-option value="Once a month">Once a month</ion-select-option>
+              <ion-select-option value="Doesn't Use">Doesn't Use</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Instagram </ion-label>
+              <ion-select mode="ios" placeholder="choose"  name="SurveyQ25Instagram"[(ngModel)]="data.SurveyQ25Instagram">
+                <ion-select-option value="Everyday">Everyday</ion-select-option>
+                <ion-select-option value="Twice a week	">Twice a week	</ion-select-option>
+                <ion-select-option value="Once a week	">Once a week	</ion-select-option>
+                <ion-select-option value="Twice a Month	">Twice a Month	</ion-select-option>
+                <ion-select-option value="Once a month">Once a month</ion-select-option>
+                <ion-select-option value="Doesn't Use">Doesn't Use</ion-select-option>
+              </ion-select>
+            </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Newspaper you read
+    </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required  name="SurveyQ26" [(ngModel)]="data.SurveyQ26"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Time given on Newspaper</ion-card-title>
+    <ion-list>
+      <ion-radio-group value="1"  name="SurveyQ27" [(ngModel)]="data.SurveyQ27">
+    
+        <ion-item>
+          <ion-label>1 hour</ion-label>
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>2 hour</ion-label>
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+    
+      
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ27=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Which section you read the most </ion-card-title>
+    <ion-list>
+      <ion-radio-group value="1"  name="SurveyQ28" [(ngModel)]="data.SurveyQ28">
+    
+        <ion-item>
+          <ion-label>political</ion-label>
+          <ion-radio slot="start" value="political"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>sports</ion-label>
+          <ion-radio slot="start" value="sports"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>regional</ion-label>
+          <ion-radio slot="start" value="regional"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>city</ion-label>
+          <ion-radio slot="start" value="city"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>entertainment</ion-label>
+          <ion-radio slot="start" value="entertainment"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>india</ion-label>
+          <ion-radio slot="start" value="india"></ion-radio>
+        </ion-item> 
+        <ion-item>
+          <ion-label>world</ion-label>
+          <ion-radio slot="start" value="world"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ28=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Newschannel you view the most
+    </ion-card-title>
+    <ion-item lines="full">
+     <ion-input type="varchar" required placeholder="Your Answer" required  name="SurveyQ29" [(ngModel)]="data.SurveyQ29"></ion-input>
+   </ion-item>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Time spent on TV</ion-card-title>
+    <ion-list>
+      <ion-radio-group value="1"  name="SurveyQ29" [(ngModel)]="data.SurveyQ29">
+    
+        <ion-item>
+          <ion-label>1 hour</ion-label>
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>2 hour</ion-label>
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+    
+      
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ29=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+   <ion-card>
+    <ion-card-title>Time slot on TV</ion-card-title>
+    <ion-list>
+      <ion-radio-group value="1"  name="SurveyQ30" [(ngModel)]="data.SurveyQ30">
+    
+        <ion-item>
+          <ion-label>6-7</ion-label>
+          <ion-radio slot="start" value="6-7"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>7-8</ion-label>
+          <ion-radio slot="start" value="7-8"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>8-9</ion-label>
+          <ion-radio slot="start" value="8-9"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>9-10</ion-label>
+          <ion-radio slot="start" value="9-10"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>10-11</ion-label>
+          <ion-radio slot="start" value="10-11"></ion-radio>
+        </ion-item>
+    
+      
+        <ion-item>
+          <ion-label>other</ion-label>
+          <ion-radio slot="start" value="other"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input *ngIf="data.SurveyQ30=='other'" type="varchar" placeholder="if other then describe"></ion-input>
+
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+   </ion-card>
+
+   <div style="padding-bottom: 30px;">
+    <ion-button (click)="getLoction()" *ngIf="!showsubmit">Done</ion-button>
+    <ion-button type="submit" *ngIf="showsubmit">
+      Submit
+    </ion-button>
+    <ion-button (click)="toLoading()" >reset</ion-button>
+   </div>
+   </form>
+
+ 
+</ion-content>

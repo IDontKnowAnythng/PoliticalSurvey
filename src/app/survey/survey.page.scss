@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+
+ion-title{
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+  color: black;
+}
+ion-icon{
+  padding: 10px;
+}
+ion-toolbar{
+  --border-style: none;
+}
+ion-card-subtitle{
+  padding: 10px;
+}
+ion-card-title{
+  font-size: 16px;padding: 10px;
+}
+ion-icon{
+  width: 15px;
+  padding: 0px;
+}
+.details{
+  position: relative;
+  left: 150px;
+  
+}
+.change ion-label{
+  font-size: 12px;
+}
+ion-list-header h1{
+  font-size:16px;
+  color: rgba(0, 0, 0, 0.466);
+  margin: 0px;
+}
+ion-list{
+  padding: 0px;
+}
+h2{
+  float: right;
+}
+
+
+
+
+
+ion-content{
+  margin-bottom: 30px !important;
+  ion-button{
+    position: relative;
+    left: 5%;
+    top:10px;
+    bottom: 10%;
+  }
+}
+.ios, .md {
+
+  home-page {
+
+    .scroll {
+      height: 100%
+    }
+
+    #map {
+      width: 100%;
+      height: 90%;
+    }
+
+  }
+}
+ion-content .inner-scroll{
+  
+    padding-bottom: 0px;
+  
+}

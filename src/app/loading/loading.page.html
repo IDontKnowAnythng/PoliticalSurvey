@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+<div *ngIf="!showForm">
+  <ion-item color="medium">
+    <ion-input required type="text" required [(ngModel)]="admin.username" name="username" placeholder="Name"></ion-input>
+  </ion-item> 
+  <ion-item color="medium">
+    <ion-input required type="password" required [(ngModel)]="admin.password" name="password" placeholder="password"></ion-input>
+  </ion-item>
+  <div style="margin: 0px auto;text-align:center;">
+    <ion-button  mode="ios" (click)="post()">login</ion-button>
+  </div>
+
+</div>
+   
+    <div *ngIf="showForm" style="margin: 0px auto;text-align:center;position: relative;top:25%;">
+      <ion-button color="success" (click)="create()">create questionaire</ion-button>
+      <ion-button color="secondary" (click)="modify()">modify questionaire</ion-button>
+      <ion-button color="danger" (click)="delet()">delete questionaire</ion-button>
+  </div>
+
+
+</ion-content>
